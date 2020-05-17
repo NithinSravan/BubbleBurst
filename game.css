@@ -28,6 +28,15 @@ canvas{
     height: 100vh;
     z-index: 2;
 }
+#felix{
+    position: absolute;
+    display: none;
+    height: 10vh;
+    width: 6.72vh;
+    left:18vh;
+    top:4vh;
+    z-index: 1; 
+}
 #pause{
     position: absolute;
     height: 20vh;
@@ -38,8 +47,15 @@ canvas{
 }
 #score{
     position: absolute;
-    left:10vh;
+    left:5vh;
     top:4vh;
+    z-index: 1;
+    color: rgb(32, 5, 66);
+}
+#fel{
+    position: absolute;
+    left:26vh;
+    top:8vh;
     z-index: 1;
     color: rgb(32, 5, 66);
 }

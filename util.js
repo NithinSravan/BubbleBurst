@@ -33,6 +33,7 @@ function restartButton() {
 }
 function pauseGame() {
     sound.play();
+    window.removeEventListener("click",clicked)
     overlay.style.display = "block";
     //resume
     const res = document.createElement('img');
@@ -47,13 +48,19 @@ function pauseGame() {
     pause.removeEventListener('click', pauseGame);
     //restart
     restartButton();
+    if(felicis!==0)
+    {
+        clearInterval(freeze)
+    }
     clearInterval(loop);
     clearInterval(timer);
     clearInterval(scoretimer)
     truth=false;
+    
 }
 function resumeGame() {
     sound.play();
+    window.addEventListener("click",clicked)
     overlay.style.display = "none";
     resume.parentNode.removeChild(resume);
     restart.parentNode.removeChild(restart);
@@ -65,6 +72,8 @@ function resumeGame() {
     genBubble();
     if(count!==0)
     countDown();
+    if(felicis!==0)
+    felixTime();
 }
 function restartGame() {
     sound.play();
@@ -80,6 +89,10 @@ start.remove();
 if (typeof (score) != 'undefined' && score != null) {
     score.remove();
 }
+if(felicis!==0)
+{
+    feliximg.addEventListener("click",felixact)
+}
 clearInterval(scoretimer);
 box.style.display="block";
 overlay.style.display = "none";
@@ -88,6 +101,7 @@ ctx.clearRect(0, 0, innerWidth, innerHeight);
 clearInterval(loop);
 truth=false;
 clearTimeout(gen);
+clearTimeout(genGaun);
 init();
 setup();
 }

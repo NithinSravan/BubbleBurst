@@ -122,5 +122,6 @@ footer{
     }
     #instructions{
         width:80%;
+        font-size: 3.5vw;
     }
 }
